@@ -1,1 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KTS Family Restaurant & Bar | Restro-Bar & Dining Nashik Road</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #0a0a0c;
+    color: #FFFFFF;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.45;
+    padding-bottom: 75px;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  .alert-bar {
+    background: linear-gradient(90deg, #92400e, #d97706, #f59e0b);
+    color: #000000;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+    padding: 7px 12px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 12, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #24221b;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+
+  /* KTS Arched Gold Crest Badge */
+  .brand-logo-wrap {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background: #000000;
+    border-radius: 12px 12px 6px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
+    text-align: center;
+    padding: 2px;
+  }
+  .brand-logo-wrap i { font-size: 10px; color: #d4af37; line-height: 1; margin-bottom: 1px; }
+  .brand-logo-wrap span {
+    font-family: 'Times New Roman', serif;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    display: block;
+    line-height: 1;
+  }
+  .brand-logo-wrap small {
+    font-size: 5px;
+    color: #d4af37;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+  }
+
+  .brand-text h1 { font-size: 14px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.2; color: #f3f4f6; }
+  .brand-text span { font-size: 10px; color: #d4af37; text-transform: uppercase; display: block; font-weight: 600; margin-top: 2px; }
+
+  .header-btn {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 10px rgba(217, 119, 6, 0.4);
+  }
+
+  .hero {
+    position: relative;
+    padding: 44px 16px 32px;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(217, 119, 6, 0.22) 0%, rgba(10, 10, 12, 0.98) 75%), #111114;
+    border-bottom: 1px solid #24221b;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #fbbf24;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .hero h2 { font-size: 26px; font-weight: 900; line-height: 1.2; margin-bottom: 10px; color: #ffffff; }
+  .hero p { font-size: 13px; color: #d1d5db; margin-bottom: 22px; max-width: 480px; margin-inline: auto; }
+
+  .hero-cta { display: flex; flex-direction: column; gap: 9px; max-width: 360px; margin-inline: auto; }
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #d97706, #b45309);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 13px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+  }
+  .btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #17161c;
+    border: 1px solid #332d21;
+    color: #f3f4f6;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 30px;
+  }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #131217;
+    border-bottom: 1px solid #24221b;
+    text-align: center;
+    padding: 14px 8px;
+  }
+  .stat-item h4 { font-size: 19px; font-weight: 800; color: #d4af37; }
+  .stat-item p { font-size: 10px; color: #9ca3af; text-transform: uppercase; margin-top: 2px; font-weight: 600; }
+
+  .section { padding: 32px 16px; border-bottom: 1px solid #24221b; }
+  .section-title { font-size: 20px; font-weight: 800; margin-bottom: 4px; color: #f3f4f6; }
+  .section-desc { font-size: 12px; color: #9ca3af; margin-bottom: 18px; }
+
+  .marker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+    border: 1.5px solid;
+    margin-right: 6px;
+    flex-shrink: 0;
+    background: transparent;
+  }
+  .marker-veg { border-color: #22c55e; }
+  .marker-veg::after { content: ''; display: block; width: 5px; height: 5px; background: #22c55e; border-radius: 50%; }
+  .marker-nonveg { border-color: #ef4444; }
+  .marker-nonveg::after { content: ''; display: block; width: 5px; height: 5px; background: #ef4444; border-radius: 50%; }
+  .marker-bar { border-color: #d4af37; }
+  .marker-bar::after { content: '🍸'; font-size: 7px; line-height: 1; }
+
+  .signature-scroller {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+  }
+  .signature-scroller::-webkit-scrollbar { display: none; }
+  .signature-card {
+    flex: 0 0 230px;
+    background: #141318;
+    border: 1px solid #2a251b;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .signature-card img { width: 100%; height: 140px; object-fit: cover; display: block; }
+  .signature-body { padding: 12px; }
+  .signature-title { font-size: 14px; font-weight: 700; display: flex; align-items: center; }
+  .signature-sub { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+  .signature-price { font-size: 13px; font-weight: 800; color: #fbbf24; margin-top: 6px; }
+
+  .menu-search {
+    width: 100%;
+    background: #131218;
+    border: 1px solid #2f2a1f;
+    padding: 12px 14px;
+    border-radius: 25px;
+    color: white;
+    font-size: 13px;
+    outline: none;
+    margin-bottom: 14px;
+  }
+  .tab-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    scrollbar-width: none;
+  }
+  .tab-row::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    white-space: nowrap;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #15141b;
+    border: 1px solid #2e281b;
+    color: #9ca3af;
+    cursor: pointer;
+  }
+  .tab-btn.active {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    border-color: #d4af37;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+  }
+
+  .menu-list { display: flex; flex-direction: column; gap: 10px; min-height: 200px; }
+  .menu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #121117;
+    border: 1px solid #242018;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .item-info { max-width: 70%; }
+  .item-info h5 { font-size: 14px; font-weight: 700; display: flex; align-items: center; line-height: 1.3; color: #f3f4f6; }
+  .item-info span { 
+    font-size: 11px; 
+    color: #9ca3af; 
+    display: block; 
+    margin-top: 2px; 
+    font-weight: 500;
+  }
+  .item-pricing { text-align: right; }
+  .price-val { font-size: 14px; font-weight: 800; color: #fbbf24; white-space: nowrap; }
+  .price-tag { font-size: 10px; color: #82828e; text-transform: uppercase; margin-top: 2px; }
+
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .feature-box {
+    background: #131218;
+    border: 1px solid #272218;
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .feature-box i { font-size: 20px; color: #d4af37; margin-bottom: 8px; display: inline-block; }
+  .feature-box h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; color: #f3f4f6; }
+  .feature-box p { font-size: 11px; color: #9ca3af; line-height: 1.4; }
+
+  .party-card {
+    background: linear-gradient(135deg, #241c0f 0%, #121117 100%);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 16px;
+    padding: 22px 16px;
+  }
+  .party-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; color: #ffffff; }
+  .party-card p { font-size: 12px; color: #d1d5db; margin-bottom: 16px; line-height: 1.5; }
+
+  .form-group { margin-bottom: 12px; }
+  .form-group label { display: block; font-size: 11px; color: #9ca3af; margin-bottom: 5px; text-transform: uppercase; font-weight: 700; }
+  .form-control {
+    width: 100%;
+    background: #14131a;
+    border: 1px solid #2f291c;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 13px;
+    outline: none;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .faq-item {
+    background: #131218;
+    border: 1px solid #242018;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .faq-question {
+    padding: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: #f3f4f6;
+  }
+  .faq-question i { transition: transform 0.2s ease; font-size: 11px; color: #d4af37; }
+  .faq-question.active i { transform: rotate(180deg); }
+  .faq-answer {
+    padding: 0 14px 14px 14px;
+    font-size: 12px;
+    color: #9ca3af;
+    line-height: 1.45;
+    display: none;
+  }
+
+  .floating-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 12, 0.98);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #272218;
+    padding: 10px 14px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+  }
+  .floating-bar a {
+    flex: 1;
+    text-align: center;
+    padding: 11px 0;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .f-call { background: #16151d; border: 1px solid #332d20; color: white; }
+  .f-wa { background: linear-gradient(135deg, #d97706, #b45309); color: white; }
+</style>
+</head>
+<body>
+
+<div class="alert-bar">
+  ✨ Flat 10% Off On Food Bill • Weekend DJ & Lounge Nights Open
+</div>
+
+<header>
+  <div class="brand">
+    <div class="brand-logo-wrap">
+      <i class="fa-solid fa-martini-glass-citrus"></i>
+      <span>KTS</span>
+      <small>Restro Bar</small>
+    </div>
+    <div class="brand-text">
+      <h1>KTS Family Restaurant & Bar</h1>
+      <span>Takli Rd, Jail Rd • Nashik</span>
+    </div>
+  </div>
+  <a href="https://wa.me/919049590042?text=Hi%20KTS,%20I%20want%20to%20reserve%20a%20table" class="header-btn">
+    <i class="fa-brands fa-whatsapp"></i> Book
+  </a>
+</header>
+
+<div class="hero">
+  <div class="badge"><i class="fa-solid fa-champagne-glasses"></i> Restro-Bar & Fine Dining</div>
+  <h2>Taste • Vibes • Memories</h2>
+  <p>Experience Nashik Road's premier restro-bar. Indulge in authentic Tandoori, coastal Seafood, sizzling Chinese starters, and hand-crafted bar spirits.</p>
+  
+  <div class="hero-cta">
+    <a href="https://wa.me/919049590042?text=Hi%20KTS,%20I%20want%20to%20reserve%20a%20table" class="btn-primary">
+      <i class="fa-brands fa-whatsapp"></i> Reserve a Table Instantly
+    </a>
+    <a href="#menuSection" class="btn-secondary">
+      <i class="fa-solid fa-book-open"></i> Browse Digital Menu
+    </a>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <h4>4.6 ★</h4>
+    <p>Google Rating</p>
+  </div>
+  <div class="stat-item">
+    <h4>2.5L</h4>
+    <p>Beer Towers</p>
+  </div>
+  <div class="stat-item">
+    <h4>150+</h4>
+    <p>Food & Drinks</p>
+  </div>
+</div>
+
+<div class="section">
+  <h3 class="section-title">Popular Specials</h3>
+  <p class="section-desc">Crowd favorites across food and bar collections.</p>
+
+  <div class="signature-scroller">
+    <div class="signature-card">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60" alt="Mutton Handi">
+      <div class="signature-body">
+        <div class="signature-title"><span class="marker marker-nonveg"></span> Mutton Handi</div>
+        <div class="signature-sub">Slow-cooked special gravy</div>
+        <div class="signature-price">₹749 / ₹1299</div>
+      </div>
+    </div>
+
+    <div class="signature-card">
+      <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=500&auto=format&fit=crop&q=60" alt="Cocktails">
+      <div class="signature-body">
+        <div class="signature-title"><span class="marker marker-bar"></span> Blue Lagoon Cocktail</div>
+        <div class="signature-sub">Curacao, citrus, crushed ice</div>
+        <div class="signature-price">Signature Bar</div>
+      </div>
+    </div>
+
+    <div class="signature-card">
+      <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=500&auto=format&fit=crop&q=60" alt="Chicken Lollypop">
+      <div class="signature-body">
+        <div class="signature-title"><span class="marker marker-nonveg"></span> Chicken Lollypop Fry</div>
+        <div class="signature-sub">Crispy oriental tossed</div>
+        <div class="signature-price">₹299</div>
+      </div>
+    </div>
+
+    <div class="signature-card">
+      <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&auto=format&fit=crop&q=60" alt="Surmai Fry">
+      <div class="signature-body">
+        <div class="signature-title"><span class="marker marker-nonveg"></span> Surmai Fry (3 Pcs)</div>
+        <div class="signature-sub">Coastal rawa / tawa fry</div>
+        <div class="signature-price">₹399</div>
+      </div>
+    </div>
+
+    <div class="signature-card">
+      <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=500&auto=format&fit=crop&q=60" alt="Beer Tower">
+      <div class="signature-body">
+        <div class="signature-title"><span class="marker marker-bar"></span> 2.5L Beer Tower</div>
+        <div class="signature-sub">Kingfisher / Budweiser</div>
+        <div class="signature-price">₹1180+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="menuSection">
+  <h3 class="section-title">Complete Digital Menu</h3>
+  <p class="section-desc">Search or filter through our complete dining and bar card.</p>
+
+  <input type="text" id="menuSearchInput" class="menu-search" placeholder="🔍 Search any item (e.g. Mutton, Pomfret, Beer, Scotch, Paneer, Hakka)..." onkeyup="filterMenu()">
+
+  <div class="tab-row" id="tabContainer">
+    <button class="tab-btn active" onclick="setCategory('all', this)">All Items</button>
+    <button class="tab-btn" onclick="setCategory('chinese_veg', this)">Chinese Veg</button>
+    <button class="tab-btn" onclick="setCategory('chinese_nonveg', this)">Chinese Non-Veg</button>
+    <button class="tab-btn" onclick="setCategory('noodles_rice', this)">Rice & Noodles</button>
+    <button class="tab-btn" onclick="setCategory('mutton_egg', this)">Mutton & Egg</button>
+    <button class="tab-btn" onclick="setCategory('seafood', this)">Sea Food</button>
+    <button class="tab-btn" onclick="setCategory('veg_mains', this)">Veg Main Course</button>
+    <button class="tab-btn" onclick="setCategory('chicken_mains', this)">Chicken Main Course</button>
+    <button class="tab-btn" onclick="setCategory('beer_shots', this)">Beers & Towers</button>
+    <button class="tab-btn" onclick="setCategory('whisky_scotch', this)">Whisky & Scotch</button>
+    <button class="tab-btn" onclick="setCategory('vodka_rum_gin', this)">Vodka, Rum & Gin</button>
+    <button class="tab-btn" onclick="setCategory('wine_breezer', this)">Wine & Breezers</button>
+  </div>
+
+  <div class="menu-list" id="fullMenuList"></div>
+</div>
+
+<div class="section">
+  <div class="party-card">
+    <span style="color:#d4af37; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">Banquets & Birthday Celebrations</span>
+    <h3 style="margin-top:6px;">Host Your Next Big Night at KTS</h3>
+    <p>Private party zones, dance floor lighting, personalized multi-course food packages, and curated drinks setups for groups and corporate meets.</p>
+    <a href="https://wa.me/919049590042?text=Hi%20KTS,%20I%20want%20to%20enquire%20about%20party%20booking" class="btn-primary">
+      <i class="fa-solid fa-cake-candles"></i> Book Party Package on WhatsApp
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <h3 class="section-title">The KTS Experience</h3>
+  <p class="section-desc">Why guests love our ambiance and flavors.</p>
+
+  <div class="features-grid">
+    <div class="feature-box">
+      <i class="fa-solid fa-wine-glass"></i>
+      <h4>Full Lounge Bar</h4>
+      <p>Premium single malts, classic scotch, beer towers, and creative cocktails.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fa-solid fa-drumstick-bite"></i>
+      <h4>Clay Tandoor & Curries</h4>
+      <p>Slow-simmered handis, tender mutton preparations, and coastal fish fries.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fa-solid fa-music"></i>
+      <h4>Vibrant Ambience</h4>
+      <p>Illuminated neon architectural lighting and family seating sections.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fa-solid fa-tags"></i>
+      <h4>Special Dining Offers</h4>
+      <p>Exclusive 10% food bill concessions and attractive group package rates.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3 class="section-title">Reserve a Table</h3>
+  <p class="section-desc">Skip weekend lines by reserving your slot in advance.</p>
+
+  <form id="resForm">
+    <div class="form-group">
+      <label>Guest Name</label>
+      <input type="text" id="gname" required placeholder="e.g. Anand Deshmukh" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Mobile Number</label>
+      <input type="tel" id="gphone" required placeholder="10-digit mobile number" pattern="[0-9]{10}" class="form-control">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" id="gdate" required class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Guests</label>
+        <input type="number" id="gguests" min="1" max="50" value="4" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Section Preference</label>
+      <select id="gpref" class="form-control">
+        <option value="Family Dining Area">Family Dining Area</option>
+        <option value="Restro-Bar / Lounge">Restro-Bar / Lounge Section</option>
+        <option value="Birthday / Celebration Table">Birthday / Celebration Table</option>
+      </select>
+    </div>
+    <button type="submit" class="btn-primary" style="width:100%; margin-top:8px;">
+      <i class="fa-brands fa-whatsapp"></i> Confirm Table on WhatsApp
+    </button>
+  </form>
+</div>
+
+<div class="section">
+  <h3 class="section-title">Frequently Asked Questions</h3>
+  <p class="section-desc">Helpful guidelines for visiting diners.</p>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>Do you have separate sections for families?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Yes! KTS features a family dining section alongside our dedicated restro-bar lounge area.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>Are alcoholic drinks and beer towers served all day?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Our full bar menu (including 2.5L beer towers, scotches, vodkas, wines, and shots) is served in compliance with standard licensed operating hours.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>Is parking available at the venue?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Yes, dedicated car and bike parking is available right along Takli Road, Jail Road.
+    </div>
+  </div>
+</div>
+
+<footer style="padding: 24px 16px; text-align: center; border-top: 1px solid #24221b; color: #71717a; font-size: 11px;">
+  <p style="color:#d4af37; font-size:13px; font-weight:700; margin-bottom:4px;">KTS Family Restaurant & Bar</p>
+  <p>Old Saykheda Rd, Takli Rd, Jail Rd, Nashik Road, Nashik</p>
+  <p style="margin-top: 10px;">© KTS Restro Bar. All rights reserved.</p>
+</footer>
+
+<div class="floating-bar">
+  <a href="tel:+919049590042" class="f-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+  <a href="https://wa.me/919049590042?text=Hi%20KTS,%20I%20want%20to%20reserve%20a%20table" class="f-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+</div>
+
+<script>
+  const KTS_MENU = [
+    // --- CHINESE VEG (Page 34732) ---
+    { n: "Chinese Bhel", sub: "Crispy noodles with tangy oriental relish", p: "₹199", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Soyabean Chilli", sub: "Tossed soy chunks with bell peppers", p: "₹219", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Veg Lollypop", sub: "Crisp seasoned veggie lollypops", p: "₹239", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Veg Sanghai", sub: "Classic wok-tossed oriental vegetables", p: "₹249", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Veg 65", sub: "Crispy spiced batter fried delights", p: "₹249", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Veg Spring Roll", sub: "Crispy rolls packed with shredded veggies", p: "₹249", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Veg Crispy", sub: "Crunchy fried vegetables tossed in sweet chilli", p: "₹269", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Corn Crispy", sub: "Crunchy golden corn kernels", p: "₹279", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Corn Chilli", sub: "Spiced sweet corn with peppers", p: "₹279", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Chilli Potato", sub: "Crispy potato fingers in chilli garlic glaze", p: "₹279", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Mashroom Chilli", sub: "Tender button mushrooms tossed in spices", p: "₹289", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Honey Potato Chilli", sub: "Sweet honey and chilli glazed fries", p: "₹289", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Baby Corn Chilli", sub: "Crisp baby corn tossed in soy chilli", p: "₹289", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Paneer Chilli", sub: "Fresh cottage cheese in tangy soya chilli", p: "₹289", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Paneer 65", sub: "Spicy curry leaf tempered paneer chunks", p: "₹299", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Paneer Sathe", sub: "Skewered paneer with spiced dressing", p: "₹299", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Paneer Majestic", sub: "Chef's special crispy spiced cottage cheese", p: "₹299", tag: "Portion", c: "chinese_veg", v: true },
+    { n: "Paneer Shezwan Dry / Gravy", sub: "Spicy schezwan pepper style", p: "₹229 / ₹249", tag: "Dry / Gravy", c: "chinese_veg", v: true },
+    { n: "Manchuriyan Dry / Gravy", sub: "Classic vegetable dumplings in garlic sauce", p: "₹229 / ₹239", tag: "Dry / Gravy", c: "chinese_veg", v: true },
+    { n: "Veg Garlic Dry / Gravy", sub: "Rich burnt garlic oriental sauce", p: "₹229 / ₹249", tag: "Dry / Gravy", c: "chinese_veg", v: true },
+
+    // --- CHINESE NON-VEG (Page 34732) ---
+    { n: "Chicken 65", sub: "South-Indian inspired spicy fried chicken", p: "₹289", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Chicken Lollypop Fry", sub: "Crispy seasoned chicken winglets", p: "₹299", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Chicken Hongkong Dry", sub: "Sweet and spicy dry style chicken", p: "₹299", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Lemon Chicken", sub: "Tangy citrus glazed chicken", p: "₹299", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Chicken Spring Roll", sub: "Golden rolls stuffed with shredded chicken", p: "₹299", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Chicken Crispy", sub: "Crispy chicken strips tossed in spicy sauce", p: "₹299", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Chicken Sanghai", sub: "Savory Shanghai style tossed chicken", p: "₹299", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Chicken Lollypop Masala", sub: "Lollipops coated in thick spicy gravy", p: "₹349", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Dragon Chicken", sub: "Fiery red chilli cashews and strips", p: "₹349", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Chicken Majestic", sub: "Tender boneless strips with curry aroma", p: "₹349", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Chicken Sathe", sub: "Skewered chicken with chef seasoning", p: "₹349", tag: "Portion", c: "chinese_nonveg", v: false },
+    { n: "Chicken Bullet (With Rum)", sub: "Infused with dark rum and flamed spices", p: "₹349", tag: "Signature", c: "chinese_nonveg", v: false },
+    { n: "Chicken Chilli Dry / Gravy", sub: "Classic soy chilli chicken", p: "₹249 / ₹299", tag: "Dry / Gravy", c: "chinese_nonveg", v: false },
+    { n: "Chicken Manchuriyan Dry / Gravy", sub: "Minced chicken globes in garlic sauce", p: "₹289 / ₹299", tag: "Dry / Gravy", c: "chinese_nonveg", v: false },
+    { n: "Chicken Garlic Dry / Gravy", sub: "Robust garlic pepper chicken", p: "₹289 / ₹299", tag: "Dry / Gravy", c: "chinese_nonveg", v: false },
+
+    // --- RICE & NOODLES (Page 34733) ---
+    { n: "Burnt Garlic Rice", sub: "Aromatic rice tossed with toasted garlic", p: "₹249", tag: "Portion", c: "noodles_rice", v: true },
+    { n: "Burnt Garlic Noodles", sub: "Wok tossed noodles with crispy garlic", p: "₹269", tag: "Portion", c: "noodles_rice", v: true },
+    { n: "Fish Fried Noodles / Rice", sub: "Tender fish chunks in wok preparation", p: "₹349", tag: "Portion", c: "noodles_rice", v: false },
+    { n: "Fried Rice (Veg / Non-Veg)", sub: "Classic oriental stir-fry", p: "₹219 / ₹279", tag: "Veg / Non-Veg", c: "noodles_rice", v: true },
+    { n: "Hakka Noodles (Veg / Non-Veg)", sub: "Street style wok noodles", p: "₹249 / ₹299", tag: "Veg / Non-Veg", c: "noodles_rice", v: true },
+    { n: "Schezwan Noodles (Veg / Non-Veg)", sub: "Fiery red pepper sauce noodles", p: "₹249 / ₹299", tag: "Veg / Non-Veg", c: "noodles_rice", v: true },
+    { n: "Schezwan Rice (Veg / Non-Veg)", sub: "Spiced wok-tossed fried rice", p: "₹249 / ₹299", tag: "Veg / Non-Veg", c: "noodles_rice", v: true },
+    { n: "Chilly Garlic Noodles (Veg / Non-Veg)", sub: "Bold chilli and garlic seasoned noodles", p: "₹269 / ₹299", tag: "Veg / Non-Veg", c: "noodles_rice", v: true },
+    { n: "Singapuri Noodles (Veg / Non-Veg)", sub: "Turmeric spiced mild curry noodles", p: "₹269 / ₹319", tag: "Veg / Non-Veg", c: "noodles_rice", v: true },
+    { n: "Singapuri Rice (Veg / Non-Veg)", sub: "Exotic yellow spiced wok rice", p: "₹269 / ₹319", tag: "Veg / Non-Veg", c: "noodles_rice", v: true },
+    { n: "Triple Schezwan Rice (Veg / Non-Veg)", sub: "Rice + noodles served with schezwan gravy", p: "₹299 / ₹349", tag: "Veg / Non-Veg", c: "noodles_rice", v: true },
+
+    // --- SPECIAL MUTTON & EGG (Page 34733) ---
+    { n: "Mutton Curry / Rahara", sub: "Tender mutton cooked in traditional herbs", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Mutton Kheema Fry", sub: "Finely minced mutton dry spiced", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Mutton Masala / Fry", sub: "Thick onion tomato masala gravy", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Mutton Moghlai", sub: "Creamy royal Mughlai spices", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Mutton Hydrabadi", sub: "Spiced green herb gravy", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Mutton Bhuna", sub: "Roasted slow with whole spices", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Mutton Do Pyaza", sub: "Diced onion rich semi-dry gravy", p: "₹499", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Tawa Mutton", sub: "Iron griddle roasted tender cuts", p: "₹499", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Mutton Stake", sub: "Chef special marinated meat cut", p: "₹549", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Mutton Handi (Full / Half)", sub: "Slow earthen pot simmered recipe", p: "₹1299 / ₹749", tag: "Full / Half", c: "mutton_egg", v: false },
+    { n: "Mutton Rogan Josh (Full / Half)", sub: "Kashmiri aromatic red curry", p: "₹1299 / ₹749", tag: "Full / Half", c: "mutton_egg", v: false },
+    { n: "Mutton Maratha (Full / Half)", sub: "Spicy regional black gravy", p: "₹1299 / ₹749", tag: "Full / Half", c: "mutton_egg", v: false },
+    { n: "Egg Boil (2 Pcs)", sub: "Steamed eggs", p: "₹49", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Half Fry", sub: "Sunny side up", p: "₹99", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Bhurji / Boil Bhurji", sub: "Spiced scrambled eggs", p: "₹119 / ₹129", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Curry / Egg Masala", sub: "Boiled eggs in rich onion gravy", p: "₹179 / ₹199", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Chilli", sub: "Crispy batter fried eggs tossed in chilli sauce", p: "₹229", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Omlet (Plain / Masala)", sub: "Pan-fried with coriander and onions", p: "₹89 / ₹99", tag: "Portion", c: "mutton_egg", v: false },
+
+    // --- SEA FOOD (Page 34734 & 34736) ---
+    { n: "Rawas Fry (3 Pcs)", sub: "Indian salmon crisp coastal fry", p: "₹199", tag: "Plate", c: "seafood", v: false },
+    { n: "Bangada Fry (1 Pc)", sub: "Whole mackerel spiced fry", p: "₹199", tag: "Plate", c: "seafood", v: false },
+    { n: "Fish Chilli", sub: "Boneless fish tossed in soy sauce and chillies", p: "₹299", tag: "Portion", c: "seafood", v: false },
+    { n: "Pomfret Fry (Whole)", sub: "Fresh whole pomfret seasoned and fried", p: "₹349", tag: "Plate", c: "seafood", v: false },
+    { n: "Prawns Koliwada (8 Pcs)", sub: "Famous Mumbai coastal fried prawns", p: "₹349", tag: "Plate", c: "seafood", v: false },
+    { n: "Prawns Tawa Fry (8 Pcs)", sub: "Griddle roasted fresh prawns", p: "₹349", tag: "Plate", c: "seafood", v: false },
+    { n: "Prawns Chilli", sub: "Batter-fried juicy prawns in chilli gravy", p: "₹349", tag: "Portion", c: "seafood", v: false },
+    { n: "Fish Finger (6 Pcs)", sub: "Crumb-coated golden fish batons", p: "₹349", tag: "Plate", c: "seafood", v: false },
+    { n: "Fish Fry (3 Pcs)", sub: "Crisp seasoned fresh catch", p: "₹349", tag: "Plate", c: "seafood", v: false },
+    { n: "Tandoori Pomfret", sub: "Clay-oven smoked marinated whole pomfret", p: "₹349", tag: "Plate", c: "seafood", v: false },
+    { n: "Surmai Fry (3 Pcs)", sub: "Kingfish steaks with rawa coating", p: "₹399", tag: "Plate", c: "seafood", v: false },
+    { n: "Tandoori Prawns", sub: "Charcoal grilled jumbo prawns", p: "₹399", tag: "Plate", c: "seafood", v: false },
+    { n: "Tandoori Fish Tikka", sub: "Smoky boneless fish skewers", p: "₹419", tag: "Portion", c: "seafood", v: false },
+    { n: "Bhangda Masala", sub: "Mackerel in authentic coastal curry", p: "₹249", tag: "Curry", c: "seafood", v: false },
+    { n: "Rahu Fish Curry / Masala", sub: "Fresh river fish in home style gravy", p: "₹289", tag: "Curry", c: "seafood", v: false },
+    { n: "Pomfret Curry / Masala", sub: "White pomfret in rich coconut-onion sauce", p: "₹349", tag: "Curry", c: "seafood", v: false },
+    { n: "Surmai Curry / Masala", sub: "Kingfish cuts simmered in tangy curry", p: "₹349", tag: "Curry", c: "seafood", v: false },
+    { n: "Prawns Curry / Masala", sub: "Juicy prawns in fragrant coastal spices", p: "₹349", tag: "Curry", c: "seafood", v: false },
+    { n: "Prawns Kolhapuri", sub: "Fiery spicy red gravy prawns", p: "₹349", tag: "Curry", c: "seafood", v: false },
+
+    // --- VEG MAIN COURSE (Page 34734 & 34735) ---
+    { n: "Thecha", sub: "Fiery green chilli and garlic dip", p: "₹149", tag: "Side", c: "veg_mains", v: true },
+    { n: "Soyabean Masala", sub: "Nutritious soy chunks in spiced onion base", p: "₹169", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Dal Tadka / Dal Fry", sub: "Yellow lentils tempered with ghee and cumin", p: "₹189", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Aloo Muttor", sub: "Potato and green peas home gravy", p: "₹189", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Veg Kolhapuri", sub: "Spicy mixed vegetables in red gravy", p: "₹199", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Veg Kofta", sub: "Crisp vegetable dumplings in rich gravy", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Methi Lasooni", sub: "Fenugreek greens infused with roasted garlic", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Mix Veg", sub: "Assorted garden veggies in yellow curry", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Muttor Paneer", sub: "Cottage cheese and peas in tomato gravy", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Chana Masala", sub: "Spiced chickpeas in tangy sauce", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Baingan Masala / Bharta", sub: "Roasted aubergine preparation", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Veg Maratha", sub: "Spicy Maharashtrian special vegetable gravy", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Veg Toofani", sub: "Tangy rich assorted vegetables", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Dal Makhani", sub: "Slow-simmered black lentils with butter & cream", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Masala / Malai Kofta", sub: "Rich creamy sauce with paneer dumplings", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Pasanda", sub: "Stuffed paneer sandwiches in cashew sauce", p: "₹269", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Shahi Paneer", sub: "Royal creamy almond and cashew base", p: "₹279", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Bhurjee", sub: "Crumbled spiced paneer with tomatoes", p: "₹279", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Handi", sub: "Rich earthen pot prepared paneer", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Angara", sub: "Smoky charcoal infused spicy paneer", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Kaju Masala / Kaju Curry", sub: "Roasted whole cashews in savory gravy", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Butter Masala", sub: "Silky tomato butter sauce with cottage cheese", p: "₹319", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Tikka Masala", sub: "Tandoor roasted paneer chunks in spicy gravy", p: "₹339", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Lajaniya", sub: "Chef's signature layered paneer delight", p: "₹349", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Shev Bhaji / Kala Masala", sub: "Spicy crisp sev in regional rassa", p: "₹169 / ₹179", tag: "Portion", c: "veg_mains", v: true },
+
+    // --- CHICKEN MAIN COURSE (Page 34736) ---
+    { n: "Chicken Curry", sub: "Home style savory chicken gravy", p: "₹249", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Bhuna", sub: "Slow-roasted chicken with caramelized onions", p: "₹249", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Kolhapuri", sub: "Fiery spicy red gravy chicken", p: "₹249", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Moghlai", sub: "Rich creamy cashew based gravy", p: "₹289", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Masala", sub: "Standard thick onion tomato gravy", p: "₹299", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Hydrabadi", sub: "Green herb and coriander infused curry", p: "₹299", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Angara", sub: "Smoky charcoal flamed red chicken curry", p: "₹299", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Tandoori Masala", sub: "Tandoori chicken pieces in rich curry", p: "₹299", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Patiyala", sub: "Punjab style chicken enveloped with egg roll", p: "₹299", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Kadai", sub: "Wok cooked with freshly crushed spices", p: "₹299", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Tawa Chicken", sub: "Sizzling iron pan cooked chicken", p: "₹319", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Tangadi Masala", sub: "Marinated drumsticks cooked in savory curry", p: "₹349", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Tikka Masala", sub: "Grilled boneless chicken in spiced sauce", p: "₹349", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Kheema Masala", sub: "Spiced minced chicken gravy", p: "₹349", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Murg Musallam (Full / Half)", sub: "Whole roasted spiced royal chicken feast", p: "₹1199 / ₹599", tag: "Full / Half", c: "chicken_mains", v: false },
+    { n: "Chicken Handi (Full / Half)", sub: "Signature clay-pot chicken curry", p: "₹799 / ₹449", tag: "Full / Half", c: "chicken_mains", v: false },
+    { n: "Butter Chicken (Full / Half)", sub: "Rich velvet butter tomato gravy", p: "₹819 / ₹459", tag: "Full / Half", c: "chicken_mains", v: false },
+    { n: "Chicken Maratha (Full / Half)", sub: "Authentic spicy Maharashtra recipe", p: "₹839 / ₹459", tag: "Full / Half", c: "chicken_mains", v: false },
+    { n: "Chicken Rahara (Full / Half)", sub: "Boneless chicken combined with spicy kheema", p: "₹839 / ₹459", tag: "Full / Half", c: "chicken_mains", v: false },
+
+    // --- BEERS & BEER TOWERS (Page 34741) ---
+    { n: "Kingfisher Strong", sub: "650ml / 500ml Can", p: "₹295 / ₹225", tag: "Beer", c: "beer_shots", v: true },
+    { n: "Kingfisher Ultra Max", sub: "650ml / 500ml Can", p: "₹375 / ₹300", tag: "Beer", c: "beer_shots", v: true },
+    { n: "London Pilsner Strong", sub: "650ml / 500ml Can", p: "₹250 / ₹200", tag: "Beer", c: "beer_shots", v: true },
+    { n: "Tuborg Strong", sub: "650ml / 500ml Can", p: "₹300 / ₹225", tag: "Beer", c: "beer_shots", v: true },
+    { n: "Budweiser Magnum", sub: "650ml / 500ml Can", p: "₹390 / ₹300", tag: "Beer", c: "beer_shots", v: true },
+    { n: "Carlsberg Strong", sub: "650ml / 500ml Can", p: "₹375 / ₹300", tag: "Beer", c: "beer_shots", v: true },
+    { n: "Kingfisher Mild", sub: "650ml / 500ml Can", p: "₹250 / ₹220", tag: "Beer", c: "beer_shots", v: true },
+    { n: "Heineken Silver", sub: "650ml Bottle", p: "₹345", tag: "Beer", c: "beer_shots", v: true },
+    { n: "Budweiser Mild", sub: "650ml / 500ml Can", p: "₹370 / ₹285", tag: "Beer", c: "beer_shots", v: true },
+    { n: "London Pilsner Mild", sub: "650ml / 500ml Can", p: "₹250 / ₹165", tag: "Beer", c: "beer_shots", v: true },
+    { n: "Carlsberg Smooth", sub: "650ml / 500ml Can", p: "₹430 / ₹285", tag: "Beer", c: "beer_shots", v: true },
+    { n: "KF Strong Beer Tower (2.5 Ltr)", sub: "Group dispenser tower", p: "₹1180", tag: "2.5L Tower", c: "beer_shots", v: true },
+    { n: "Tuborg Strong Tower (2.5 Ltr)", sub: "Group dispenser tower", p: "₹1200", tag: "2.5L Tower", c: "beer_shots", v: true },
+    { n: "Budweiser Mild Tower (2.5 Ltr)", sub: "Group dispenser tower", p: "₹1480", tag: "2.5L Tower", c: "beer_shots", v: true },
+    { n: "Budweiser Magnum Tower (2.5 Ltr)", sub: "Group dispenser tower", p: "₹1560", tag: "2.5L Tower", c: "beer_shots", v: true },
+    { n: "Tequila Shot / Fire Shot", sub: "Single 30ml shot", p: "₹199 / ₹299", tag: "Shot", c: "beer_shots", v: true },
+    { n: "Jagermeister (30ml)", sub: "German herbal liqueur", p: "₹249", tag: "Shot", c: "beer_shots", v: true },
+
+    // --- WHISKY & SCOTCH (Page 34738 & 34739) ---
+    { n: "Royal Challenge / Royal Green", sub: "30ml / Nip (180ml)", p: "₹65 / ₹390", tag: "Whisky", c: "whisky_scotch", v: true },
+    { n: "Royal Stag Barrel Select", sub: "30ml / Nip (180ml)", p: "₹80 / ₹480", tag: "Whisky", c: "whisky_scotch", v: true },
+    { n: "Oaksmith Silver / Oaken Glow", sub: "30ml / Nip (180ml)", p: "₹85 / ₹510", tag: "Whisky", c: "whisky_scotch", v: true },
+    { n: "Legacy Whisky", sub: "30ml / Nip (180ml)", p: "₹90 / ₹540", tag: "Whisky", c: "whisky_scotch", v: true },
+    { n: "Rockford Classic / Blenders Pride", sub: "30ml / Nip (180ml)", p: "₹95 / ₹570", tag: "Whisky", c: "whisky_scotch", v: true },
+    { n: "Signature / Oaksmith Gold", sub: "30ml / Nip (180ml)", p: "₹95 / ₹100", tag: "Whisky", c: "whisky_scotch", v: true },
+    { n: "Antiquity Blue / Rockford Reserve", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "Whisky", c: "whisky_scotch", v: true },
+    { n: "Jim Beam Bourbon", sub: "30ml / Nip (180ml)", p: "₹200 / ₹1200", tag: "Whisky", c: "whisky_scotch", v: true },
+    { n: "The Glenwalk Scotch", sub: "30ml / Nip (180ml)", p: "₹140 / ₹840", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Ballantines / Vat-69", sub: "30ml / Nip (180ml)", p: "₹170 / ₹1020", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Johnnie Walker Red Label", sub: "30ml / Nip (180ml)", p: "₹165 / ₹990", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "100 Pipers Regular / Black Dog", sub: "30ml / Nip (180ml)", p: "₹175 / ₹1050", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Black & White Scotch", sub: "30ml / Nip (180ml)", p: "₹185 / ₹1110", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Royal Ranthambore", sub: "30ml / Nip (180ml)", p: "₹190 / ₹1040", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Jameson Irish Whiskey", sub: "30ml / Nip (180ml)", p: "₹210 / ₹1260", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Chivas Regal 12 Yrs", sub: "30ml / Nip (180ml)", p: "₹300 / ₹1800", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Gentleman Jack", sub: "30ml / Nip (180ml)", p: "₹230 / ₹1380", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Johnnie Walker Black Label", sub: "30ml / Nip (180ml)", p: "₹240 / ₹1440", tag: "Scotch", c: "whisky_scotch", v: true },
+
+    // --- VODKA, RUM & GIN (Page 34737 & 34738) ---
+    { n: "Romanova Vodka", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Vodka", c: "vodka_rum_gin", v: true },
+    { n: "Magic Moments Regular", sub: "30ml / Nip (180ml)", p: "₹70 / ₹420", tag: "Vodka", c: "vodka_rum_gin", v: true },
+    { n: "Smirnoff Regular / Flavour", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "Vodka", c: "vodka_rum_gin", v: true },
+    { n: "Absolut Vodka / Raspberry", sub: "30ml / Nip (180ml)", p: "₹190 / ₹1140", tag: "Vodka", c: "vodka_rum_gin", v: true },
+    { n: "Blue Riband Gin / Greater Than", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Gin", c: "vodka_rum_gin", v: true },
+    { n: "Bombay Sapphire / Jaisalmer Gin", sub: "30ml / Nip (180ml)", p: "₹240 / ₹1440", tag: "Craft Gin", c: "vodka_rum_gin", v: true },
+    { n: "Old Monk Rum / McD No. 1", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Dark Rum", c: "vodka_rum_gin", v: true },
+    { n: "Bacardi Black", sub: "30ml / Nip (180ml)", p: "₹65 / ₹390", tag: "Rum", c: "vodka_rum_gin", v: true },
+    { n: "Bacardi White / Flavour", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "White Rum", c: "vodka_rum_gin", v: true },
+
+    // --- WINE & BREEZERS (Page 34739) ---
+    { n: "Sula (Samara) Red / White", sub: "750ml / 375ml", p: "₹665 / ₹360", tag: "Wine", c: "wine_breezer", v: true },
+    { n: "Dia White / Red Wine", sub: "750ml Bottle", p: "₹495", tag: "Wine", c: "wine_breezer", v: true },
+    { n: "Madera Red / White", sub: "750ml / 375ml", p: "₹800 / ₹430", tag: "Wine", c: "wine_breezer", v: true },
+    { n: "Sula Shiraz Wine", sub: "750ml / 375ml", p: "₹1715 / ₹855", tag: "Wine", c: "wine_breezer", v: true },
+    { n: "Sula Zinfandel Rose", sub: "750ml / 375ml", p: "₹1335 / ₹810", tag: "Wine", c: "wine_breezer", v: true },
+    { n: "Sula Chenin Blanc", sub: "750ml Bottle", p: "₹795", tag: "Wine", c: "wine_breezer", v: true },
+    { n: "Sula Brut Sparkling", sub: "750ml / 375ml", p: "₹1990 / ₹565", tag: "Sparkling", c: "wine_breezer", v: true },
+    { n: "Bacardi Breezer (Cranberry)", sub: "275ml Bottle", p: "₹235", tag: "Breezer", c: "wine_breezer", v: true },
+    { n: "Bacardi Breezer (Jamaican / Blue Berry)", sub: "275ml Bottle", p: "₹235", tag: "Breezer", c: "wine_breezer", v: true }
+  ];
+
+  let currentCategory = 'all';
+
+  function renderList(items) {
+    const list = document.getElementById('fullMenuList');
+    if (!list) return;
+    if (items.length === 0) {
+      list.innerHTML = '<div style="text-align:center; padding:30px 10px; color:#9ca3af; font-size:13px;">No dish or drink found matching your search.</div>';
+      return;
+    }
+
+    list.innerHTML = items.map(item => {
+      let markerClass = 'marker-veg';
+      if (!item.v) {
+        markerClass = 'marker-nonveg';
+      } else if (item.c === 'beer_shots' || item.c === 'whisky_scotch' || item.c === 'vodka_rum_gin' || item.c === 'wine_breezer') {
+        markerClass = 'marker-bar';
+      }
+
+      return `
+        <div class="menu-row">
+          <div class="item-info">
+            <h5><span class="marker ${markerClass}"></span> ${item.n}</h5>
+            <span>${item.sub}</span>
+          </div>
+          <div class="item-pricing">
+            <div class="price-val">${item.p}</div>
+            <div class="price-tag">${item.tag}</div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function setCategory(cat, btn) {
+    currentCategory = cat;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterMenu();
+  }
+
+  function filterMenu() {
+    const input = document.getElementById('menuSearchInput');
+    const query = input ? input.value.toLowerCase().trim() : '';
+    const filtered = KTS_MENU.filter(item => {
+      const matchCat = (currentCategory === 'all' || item.c === currentCategory);
+      const matchQuery = item.n.toLowerCase().includes(query) || item.sub.toLowerCase().includes(query);
+      return matchCat && matchQuery;
+    });
+    renderList(filtered);
+  }
+
+  function toggleFaq(el) {
+    el.classList.toggle('active');
+    const answer = el.nextElementSibling;
+    answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+  }
+
+  document.getElementById('resForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = encodeURIComponent(document.getElementById('gname').value.trim());
+    var phone = encodeURIComponent(document.getElementById('gphone').value.trim());
+    var date = encodeURIComponent(document.getElementById('gdate').value);
+    var guests = encodeURIComponent(document.getElementById('gguests').value);
+    var pref = encodeURIComponent(document.getElementById('gpref').value);
+
+    var msg = "Hi KTS Family Restaurant & Bar, I would like to reserve a table:%0A%0A" +
+              "👤 *Name:* " + name + "%0A" +
+              "📞 *Phone:* " + phone + "%0A" +
+              "📅 *Date:* " + date + "%0A" +
+              "👥 *Guests:* " + guests + "%0A" +
+              "📍 *Section:* " + pref;
+
+    window.open("https://wa.me/919049590042?text=" + msg, "_blank");
+  });
+
+  window.addEventListener('DOMContentLoaded', function() {
+    renderList(KTS_MENU);
+  });
+</script>
+
+</body>
+</html>
 
