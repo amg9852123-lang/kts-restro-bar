@@ -41,55 +41,46 @@
   }
   .brand { display: flex; align-items: center; gap: 10px; }
 
-  /* KTS Arched Gold Crest Badge */
-  .brand-logo-wrap {
+  /* KTS Custom Image Logo */
+  .brand-logo-img {
     width: 44px;
     height: 44px;
     min-width: 44px;
-    background: #000000;
-    border-radius: 12px 12px 6px 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #d4af37;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1.5px solid #d4af37;
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
-    text-align: center;
-    padding: 2px;
-  }
-  .brand-logo-wrap i { font-size: 10px; color: #d4af37; line-height: 1; margin-bottom: 1px; }
-  .brand-logo-wrap span {
-    font-family: 'Times New Roman', serif;
-    font-weight: 900;
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: #ffffff;
     display: block;
-    line-height: 1;
-  }
-  .brand-logo-wrap small {
-    font-size: 5px;
-    color: #d4af37;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-top: 1px;
   }
 
   .brand-text h1 { font-size: 14px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.2; color: #f3f4f6; }
   .brand-text span { font-size: 10px; color: #d4af37; text-transform: uppercase; display: block; font-weight: 600; margin-top: 2px; }
 
+  .header-actions { display: flex; align-items: center; gap: 8px; }
+
   .header-btn {
     background: linear-gradient(135deg, #d97706, #b45309);
     color: #fff;
-    padding: 7px 14px;
+    padding: 7px 12px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     box-shadow: 0 2px 10px rgba(217, 119, 6, 0.4);
+  }
+
+  .zomato-btn-small {
+    background: #e23744;
+    color: #fff;
+    padding: 7px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 
   .hero {
@@ -140,6 +131,18 @@
     border: 1px solid #332d21;
     color: #f3f4f6;
     font-weight: 600;
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 30px;
+  }
+  .btn-zomato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #cb202d;
+    color: #fff;
+    font-weight: 700;
     font-size: 14px;
     padding: 12px 20px;
     border-radius: 30px;
@@ -332,7 +335,7 @@
     border-top: 1px solid #272218;
     padding: 10px 14px;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     z-index: 100;
   }
   .floating-bar a {
@@ -340,14 +343,15 @@
     text-align: center;
     padding: 11px 0;
     border-radius: 25px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 5px;
   }
   .f-call { background: #16151d; border: 1px solid #332d20; color: white; }
+  .f-maps { background: #25232d; border: 1px solid #3b3749; color: #60a5fa; }
   .f-wa { background: linear-gradient(135deg, #d97706, #b45309); color: white; }
 </style>
 </head>
@@ -359,19 +363,20 @@
 
 <header>
   <div class="brand">
-    <div class="brand-logo-wrap">
-      <i class="fa-solid fa-martini-glass-citrus"></i>
-      <span>KTS</span>
-      <small>Restro Bar</small>
-    </div>
+    <img src="https://i.ibb.co/q39NDySp/kts-logo-page-0001.jpg" alt="KTS Logo" class="brand-logo-img">
     <div class="brand-text">
       <h1>KTS Family Restaurant & Bar</h1>
       <span>Takli Rd, Jail Rd • Nashik</span>
     </div>
   </div>
-  <a href="https://wa.me/919049590042?text=Hi%20KTS,%20I%20want%20to%20reserve%20a%20table" class="header-btn">
-    <i class="fa-brands fa-whatsapp"></i> Book
-  </a>
+  <div class="header-actions">
+    <a href="https://zomato.onelink.me/xqzv/wh2qsp2k" target="_blank" class="zomato-btn-small">
+      <i class="fa-solid fa-utensils"></i> Zomato
+    </a>
+    <a href="https://wa.me/919049590042?text=Hi%20KTS,%20I%20want%20to%20reserve%20a%20table" class="header-btn">
+      <i class="fa-brands fa-whatsapp"></i> Book
+    </a>
+  </div>
 </header>
 
 <div class="hero">
@@ -382,6 +387,12 @@
   <div class="hero-cta">
     <a href="https://wa.me/919049590042?text=Hi%20KTS,%20I%20want%20to%20reserve%20a%20table" class="btn-primary">
       <i class="fa-brands fa-whatsapp"></i> Reserve a Table Instantly
+    </a>
+    <a href="https://zomato.onelink.me/xqzv/wh2qsp2k" target="_blank" class="btn-zomato">
+      <i class="fa-solid fa-utensils"></i> Order / View on Zomato
+    </a>
+    <a href="https://maps.app.goo.gl/wxW9HSnt32FcZ19q7?g_st=ac" target="_blank" class="btn-secondary">
+      <i class="fa-solid fa-location-dot" style="color: #ef4444;"></i> Get Google Maps Directions
     </a>
     <a href="#menuSection" class="btn-secondary">
       <i class="fa-solid fa-book-open"></i> Browse Digital Menu
@@ -410,7 +421,7 @@
 
   <div class="signature-scroller">
     <div class="signature-card">
-      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60" alt="Mutton Handi">
+      <img src="https://i.ibb.co/GQFPZ2m0/mutton-865165-16.jpg" alt="Mutton Handi">
       <div class="signature-body">
         <div class="signature-title"><span class="marker marker-nonveg"></span> Mutton Handi</div>
         <div class="signature-sub">Slow-cooked special gravy</div>
@@ -419,7 +430,7 @@
     </div>
 
     <div class="signature-card">
-      <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=500&auto=format&fit=crop&q=60" alt="Cocktails">
+      <img src="https://i.ibb.co/3m0mXyZ5/360-F-83433594-0xo0-M4r8-WPJFq-Vkt-FUu7ubkn831t4kpu.jpg" alt="Blue Lagoon Cocktail">
       <div class="signature-body">
         <div class="signature-title"><span class="marker marker-bar"></span> Blue Lagoon Cocktail</div>
         <div class="signature-sub">Curacao, citrus, crushed ice</div>
@@ -428,7 +439,7 @@
     </div>
 
     <div class="signature-card">
-      <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=500&auto=format&fit=crop&q=60" alt="Chicken Lollypop">
+      <img src="https://i.ibb.co/nsrYFvYS/360-F-1670644406-Z6y-G7rn6-ZEPPPPr-FUvcvvdj3-Xg-Cm-JNwr-1.jpg" alt="Chicken Lollypop Fry">
       <div class="signature-body">
         <div class="signature-title"><span class="marker marker-nonveg"></span> Chicken Lollypop Fry</div>
         <div class="signature-sub">Crispy oriental tossed</div>
@@ -437,7 +448,7 @@
     </div>
 
     <div class="signature-card">
-      <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&auto=format&fit=crop&q=60" alt="Surmai Fry">
+      <img src="https://i.ibb.co/p6kyLcxH/delicious-crispy-king-fish-fry-also-known-as-indian-surmai-served-onion-lemon-placed-over-rustic-woo.jpg" alt="Surmai Fry">
       <div class="signature-body">
         <div class="signature-title"><span class="marker marker-nonveg"></span> Surmai Fry (3 Pcs)</div>
         <div class="signature-sub">Coastal rawa / tawa fry</div>
@@ -446,7 +457,7 @@
     </div>
 
     <div class="signature-card">
-      <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=500&auto=format&fit=crop&q=60" alt="Beer Tower">
+      <img src="https://i.ibb.co/R4yJmwg6/34811-clean.png" alt="Beer Tower">
       <div class="signature-body">
         <div class="signature-title"><span class="marker marker-bar"></span> 2.5L Beer Tower</div>
         <div class="signature-sub">Kingfisher / Budweiser</div>
@@ -593,12 +604,18 @@
 
 <footer style="padding: 24px 16px; text-align: center; border-top: 1px solid #24221b; color: #71717a; font-size: 11px;">
   <p style="color:#d4af37; font-size:13px; font-weight:700; margin-bottom:4px;">KTS Family Restaurant & Bar</p>
-  <p>Old Saykheda Rd, Takli Rd, Jail Rd, Nashik Road, Nashik</p>
-  <p style="margin-top: 10px;">© KTS Restro Bar. All rights reserved.</p>
+  <p><a href="https://maps.app.goo.gl/wxW9HSnt32FcZ19q7?g_st=ac" target="_blank" style="color:#d1d5db; text-decoration:underline;">Old Saykheda Rd, Takli Rd, Jail Rd, Nashik Road, Nashik 📍</a></p>
+  <div style="margin-top: 10px; display: flex; justify-content: center; gap: 14px;">
+    <a href="https://maps.app.goo.gl/wxW9HSnt32FcZ19q7?g_st=ac" target="_blank" style="color:#60a5fa;"><i class="fa-solid fa-map-location-dot"></i> Maps</a>
+    <a href="https://zomato.onelink.me/xqzv/wh2qsp2k" target="_blank" style="color:#ef4444;"><i class="fa-solid fa-utensils"></i> Zomato</a>
+    <a href="tel:+919049590042" style="color:#34d399;"><i class="fa-solid fa-phone"></i> Call</a>
+  </div>
+  <p style="margin-top: 12px;">© KTS Restro Bar. All rights reserved.</p>
 </footer>
 
 <div class="floating-bar">
-  <a href="tel:+919049590042" class="f-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+  <a href="tel:+919049590042" class="f-call"><i class="fa-solid fa-phone"></i> Call</a>
+  <a href="https://maps.app.goo.gl/wxW9HSnt32FcZ19q7?g_st=ac" target="_blank" class="f-maps"><i class="fa-solid fa-location-arrow"></i> Maps</a>
   <a href="https://wa.me/919049590042?text=Hi%20KTS,%20I%20want%20to%20reserve%20a%20table" class="f-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
 </div>
 
@@ -889,4 +906,3 @@
 
 </body>
 </html>
-
