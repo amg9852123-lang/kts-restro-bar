@@ -559,8 +559,8 @@
     <div class="form-group">
       <label>Section Preference</label>
       <select id="gpref" class="form-control">
-        <option value="Family Dining Area">Family Dining Area</option>
-        <option value="Restro-Bar / Lounge">Restro-Bar / Lounge Section</option>
+        <option value="Family Dining Hall">Family Dining Hall</option>
+        <option value="Restro-Bar / Lounge">Restro-Bar / Lounge</option>
         <option value="Birthday / Celebration Table">Birthday / Celebration Table</option>
       </select>
     </div>
@@ -886,21 +886,22 @@
 
   document.getElementById('resForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    var name = encodeURIComponent(document.getElementById('gname').value.trim());
-    var phone = encodeURIComponent(document.getElementById('gphone').value.trim());
-    var date = encodeURIComponent(document.getElementById('gdate').value);
-    var guests = encodeURIComponent(document.getElementById('gguests').value);
-    var pref = encodeURIComponent(document.getElementById('gpref').value);
+    
+    var name = document.getElementById('gname').value.trim();
+    var phone = document.getElementById('gphone').value.trim();
+    var date = document.getElementById('gdate').value;
+    var guests = document.getElementById('gguests').value;
+    var pref = document.getElementById('gpref').value;
 
-    var text = "Hi KTS Family Restaurant & Bar, I would like to reserve a table:%0A%0A" +
-               "👤 *Name:* " + name + "%0A" +
-               "📞 *Phone:* " + phone + "%0A" +
-               "📅 *Date:* " + date + "%0A" +
-               "👥 *Guests:* " + guests + "%0A" +
-               "📍 *Section:* " + pref;
+    var message = "Hi KTS Family Restaurant & Bar, I would like to book a table:\n\n" +
+                  "👤   *Name:*  " + name + "\n" +
+                  "📞   *Phone:*  " + phone + "\n" +
+                  "📅   *Date:*  " + date + "\n" +
+                  "👥   *Guests:*  " + guests + "\n" +
+                  "📍   *Preference:*  " + pref;
 
-    var url = "https://api.whatsapp.com/send?phone=919049590042&text=" + text;
-    window.location.href = url;
+    var whatsappURL = "https://api.whatsapp.com/send?phone=919049590042&text=" + encodeURIComponent(message);
+    window.location.href = whatsappURL;
   });
 
   window.addEventListener('DOMContentLoaded', function() {
