@@ -413,7 +413,7 @@
     <p>Beer Towers</p>
   </div>
   <div class="stat-item">
-    <h4>150+</h4>
+    <h4>180+</h4>
     <p>Food & Drinks</p>
   </div>
 </div>
@@ -485,6 +485,7 @@
     <button class="tab-btn" onclick="setCategory('seafood', this)">Sea Food</button>
     <button class="tab-btn" onclick="setCategory('veg_mains', this)">Veg Main Course</button>
     <button class="tab-btn" onclick="setCategory('chicken_mains', this)">Chicken Main Course</button>
+    <button class="tab-btn" onclick="setCategory('salad_dessert', this)">Salad & Dessert</button>
     <button class="tab-btn" onclick="setCategory('beer_shots', this)">Beers & Towers</button>
     <button class="tab-btn" onclick="setCategory('whisky_scotch', this)">Whisky & Scotch</button>
     <button class="tab-btn" onclick="setCategory('vodka_rum_gin', this)">Vodka, Rum & Gin</button>
@@ -607,7 +608,7 @@
 
 <footer style="padding: 24px 16px; text-align: center; border-top: 1px solid #24221b; color: #71717a; font-size: 11px;">
   <p style="color:#d4af37; font-size:13px; font-weight:700; margin-bottom:4px;">KTS Family Restaurant & Bar</p>
-  <p><a href="https://maps.app.goo.gl/wxW9HSnt32FcZ19q7?g_st=ac" target="_blank" style="color:#d1d5db; text-decoration:underline;">Old Saykheda Rd, Takli Rd, Jail Rd, Nashik Road, Nashik 📍</a></p>
+  <p><a href="https://maps.app.goo.gl/wxW9HSnt32FcZ19q7?g_st=ac" target="_blank" style="color:#d1d5db; text-decoration:underline;">Old Saykheda Rd, Takli Rd, Jail Road, Nashik Road, Nashik 📍</a></p>
   <div style="margin-top: 10px; display: flex; justify-content: center; gap: 14px;">
     <a href="https://maps.app.goo.gl/wxW9HSnt32FcZ19q7?g_st=ac" target="_blank" style="color:#60a5fa;"><i class="fa-solid fa-map-location-dot"></i> Maps</a>
     <a href="https://zomato.onelink.me/xqzv/wh2qsp2k" target="_blank" style="color:#ef4444;"><i class="fa-solid fa-utensils"></i> Zomato</a>
@@ -624,7 +625,7 @@
 
 <script>
   const KTS_MENU = [
-    // --- CHINESE VEG (Page 34732) ---
+    // --- CHINESE VEG (PDF Page 2) ---
     { n: "Chinese Bhel", sub: "Crispy noodles with tangy oriental relish", p: "₹199", tag: "Portion", c: "chinese_veg", v: true },
     { n: "Soyabean Chilli", sub: "Tossed soy chunks with bell peppers", p: "₹219", tag: "Portion", c: "chinese_veg", v: true },
     { n: "Veg Lollypop", sub: "Crisp seasoned veggie lollypops", p: "₹239", tag: "Portion", c: "chinese_veg", v: true },
@@ -646,7 +647,7 @@
     { n: "Manchuriyan Dry / Gravy", sub: "Classic vegetable dumplings in garlic sauce", p: "₹229 / ₹239", tag: "Dry / Gravy", c: "chinese_veg", v: true },
     { n: "Veg Garlic Dry / Gravy", sub: "Rich burnt garlic oriental sauce", p: "₹229 / ₹249", tag: "Dry / Gravy", c: "chinese_veg", v: true },
 
-    // --- CHINESE NON-VEG (Page 34732) ---
+    // --- CHINESE NON-VEG (PDF Page 2) ---
     { n: "Chicken 65", sub: "South-Indian inspired spicy fried chicken", p: "₹289", tag: "Portion", c: "chinese_nonveg", v: false },
     { n: "Chicken Lollypop Fry", sub: "Crispy seasoned chicken winglets", p: "₹299", tag: "Portion", c: "chinese_nonveg", v: false },
     { n: "Chicken Hongkong Dry", sub: "Sweet and spicy dry style chicken", p: "₹299", tag: "Portion", c: "chinese_nonveg", v: false },
@@ -659,11 +660,12 @@
     { n: "Chicken Majestic", sub: "Tender boneless strips with curry aroma", p: "₹349", tag: "Portion", c: "chinese_nonveg", v: false },
     { n: "Chicken Sathe", sub: "Skewered chicken with chef seasoning", p: "₹349", tag: "Portion", c: "chinese_nonveg", v: false },
     { n: "Chicken Bullet (With Rum)", sub: "Infused with dark rum and flamed spices", p: "₹349", tag: "Signature", c: "chinese_nonveg", v: false },
+    { n: "Chicken Lollipop (Special)", sub: "Chef signature deep tossed lollipop", p: "₹419", tag: "Portion", c: "chinese_nonveg", v: false },
     { n: "Chicken Chilli Dry / Gravy", sub: "Classic soy chilli chicken", p: "₹249 / ₹299", tag: "Dry / Gravy", c: "chinese_nonveg", v: false },
     { n: "Chicken Manchuriyan Dry / Gravy", sub: "Minced chicken globes in garlic sauce", p: "₹289 / ₹299", tag: "Dry / Gravy", c: "chinese_nonveg", v: false },
     { n: "Chicken Garlic Dry / Gravy", sub: "Robust garlic pepper chicken", p: "₹289 / ₹299", tag: "Dry / Gravy", c: "chinese_nonveg", v: false },
 
-    // --- RICE & NOODLES (Page 34733) ---
+    // --- RICE & NOODLES (PDF Page 3) ---
     { n: "Burnt Garlic Rice", sub: "Aromatic rice tossed with toasted garlic", p: "₹249", tag: "Portion", c: "noodles_rice", v: true },
     { n: "Burnt Garlic Noodles", sub: "Wok tossed noodles with crispy garlic", p: "₹269", tag: "Portion", c: "noodles_rice", v: true },
     { n: "Fish Fried Noodles / Rice", sub: "Tender fish chunks in wok preparation", p: "₹349", tag: "Portion", c: "noodles_rice", v: false },
@@ -676,8 +678,9 @@
     { n: "Singapuri Rice (Veg / Non-Veg)", sub: "Exotic yellow spiced wok rice", p: "₹269 / ₹319", tag: "Veg / Non-Veg", c: "noodles_rice", v: true },
     { n: "Triple Schezwan Rice (Veg / Non-Veg)", sub: "Rice + noodles served with schezwan gravy", p: "₹299 / ₹349", tag: "Veg / Non-Veg", c: "noodles_rice", v: true },
 
-    // --- SPECIAL MUTTON & EGG (Page 34733) ---
-    { n: "Mutton Curry / Rahara", sub: "Tender mutton cooked in traditional herbs", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
+    // --- SPECIAL MUTTON & EGG (PDF Page 3) ---
+    { n: "Mutton Curry", sub: "Tender mutton cooked in traditional herbs", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Mutton Rahara", sub: "Minced and cut mutton in spiced rich gravy", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
     { n: "Mutton Kheema Fry", sub: "Finely minced mutton dry spiced", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
     { n: "Mutton Masala / Fry", sub: "Thick onion tomato masala gravy", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
     { n: "Mutton Moghlai", sub: "Creamy royal Mughlai spices", p: "₹349", tag: "Portion", c: "mutton_egg", v: false },
@@ -689,20 +692,22 @@
     { n: "Mutton Handi (Full / Half)", sub: "Slow earthen pot simmered recipe", p: "₹1299 / ₹749", tag: "Full / Half", c: "mutton_egg", v: false },
     { n: "Mutton Rogan Josh (Full / Half)", sub: "Kashmiri aromatic red curry", p: "₹1299 / ₹749", tag: "Full / Half", c: "mutton_egg", v: false },
     { n: "Mutton Maratha (Full / Half)", sub: "Spicy regional black gravy", p: "₹1299 / ₹749", tag: "Full / Half", c: "mutton_egg", v: false },
-    { n: "Egg Boil (2 Pcs)", sub: "Steamed eggs", p: "₹49", tag: "Portion", c: "mutton_egg", v: false },
-    { n: "Egg Half Fry", sub: "Sunny side up", p: "₹99", tag: "Portion", c: "mutton_egg", v: false },
-    { n: "Egg Bhurji / Boil Bhurji", sub: "Spiced scrambled eggs", p: "₹119 / ₹129", tag: "Portion", c: "mutton_egg", v: false },
-    { n: "Egg Curry / Egg Masala", sub: "Boiled eggs in rich onion gravy", p: "₹179 / ₹199", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Boil (2 Pcs)", sub: "Steamed farm fresh eggs", p: "₹49", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Half Fry", sub: "Sunny side up fried egg", p: "₹99", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Bhurji", sub: "Spiced scrambled egg with herbs", p: "₹119", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Boil Bhurji", sub: "Grated boiled egg scrambled in masala", p: "₹129", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Curry", sub: "Whole eggs in seasoned home style gravy", p: "₹179", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Boil Masala", sub: "Boiled eggs simmered in rich gravy", p: "₹199", tag: "Portion", c: "mutton_egg", v: false },
+    { n: "Egg Masala", sub: "Eggs cooked in thick onion tomato gravy", p: "₹199", tag: "Portion", c: "mutton_egg", v: false },
     { n: "Egg Chilli", sub: "Crispy batter fried eggs tossed in chilli sauce", p: "₹229", tag: "Portion", c: "mutton_egg", v: false },
     { n: "Egg Omlet (Plain / Masala)", sub: "Pan-fried with coriander and onions", p: "₹89 / ₹99", tag: "Portion", c: "mutton_egg", v: false },
 
-    // --- SEA FOOD (Page 34734 & 34736) ---
+    // --- SEA FOOD (PDF Page 4 & 6) ---
     { n: "Rawas Fry (3 Pcs)", sub: "Indian salmon crisp coastal fry", p: "₹199", tag: "Plate", c: "seafood", v: false },
     { n: "Bangada Fry (1 Pc)", sub: "Whole mackerel spiced fry", p: "₹199", tag: "Plate", c: "seafood", v: false },
     { n: "Fish Chilli", sub: "Boneless fish tossed in soy sauce and chillies", p: "₹299", tag: "Portion", c: "seafood", v: false },
     { n: "Pomfret Fry (Whole)", sub: "Fresh whole pomfret seasoned and fried", p: "₹349", tag: "Plate", c: "seafood", v: false },
-    { n: "Prawns Koliwada (8 Pcs)", sub: "Famous Mumbai coastal fried prawns", p: "₹349", tag: "Plate", c: "seafood", v: false },
-    { n: "Prawns Tawa Fry (8 Pcs)", sub: "Griddle roasted fresh prawns", p: "₹349", tag: "Plate", c: "seafood", v: false },
+    { n: "Prawns Koliwada / Tawa Fry (8 Pcs)", sub: "Famous Mumbai coastal spiced prawns", p: "₹349", tag: "Plate", c: "seafood", v: false },
     { n: "Prawns Chilli", sub: "Batter-fried juicy prawns in chilli gravy", p: "₹349", tag: "Portion", c: "seafood", v: false },
     { n: "Fish Finger (6 Pcs)", sub: "Crumb-coated golden fish batons", p: "₹349", tag: "Plate", c: "seafood", v: false },
     { n: "Fish Fry (3 Pcs)", sub: "Crisp seasoned fresh catch", p: "₹349", tag: "Plate", c: "seafood", v: false },
@@ -711,16 +716,21 @@
     { n: "Tandoori Prawns", sub: "Charcoal grilled jumbo prawns", p: "₹399", tag: "Plate", c: "seafood", v: false },
     { n: "Tandoori Fish Tikka", sub: "Smoky boneless fish skewers", p: "₹419", tag: "Portion", c: "seafood", v: false },
     { n: "Bhangda Masala", sub: "Mackerel in authentic coastal curry", p: "₹249", tag: "Curry", c: "seafood", v: false },
-    { n: "Rahu Fish Curry / Masala", sub: "Fresh river fish in home style gravy", p: "₹289", tag: "Curry", c: "seafood", v: false },
-    { n: "Pomfret Curry / Masala", sub: "White pomfret in rich coconut-onion sauce", p: "₹349", tag: "Curry", c: "seafood", v: false },
-    { n: "Surmai Curry / Masala", sub: "Kingfish cuts simmered in tangy curry", p: "₹349", tag: "Curry", c: "seafood", v: false },
-    { n: "Prawns Curry / Masala", sub: "Juicy prawns in fragrant coastal spices", p: "₹349", tag: "Curry", c: "seafood", v: false },
+    { n: "Rahu Fish Curry", sub: "Fresh river fish in home style gravy", p: "₹289", tag: "Curry", c: "seafood", v: false },
+    { n: "Rahu Fish Masala", sub: "River fish in thick spicy masala", p: "₹289", tag: "Curry", c: "seafood", v: false },
+    { n: "Fish Tikka Masala", sub: "Tandoor roasted fish in flavorful gravy", p: "₹319", tag: "Curry", c: "seafood", v: false },
+    { n: "Pomfret Curry", sub: "White pomfret in coastal coconut sauce", p: "₹349", tag: "Curry", c: "seafood", v: false },
+    { n: "Pomfret Masala", sub: "Pomfret cuts simmered in onion tomato gravy", p: "₹349", tag: "Curry", c: "seafood", v: false },
+    { n: "Surmai Masala", sub: "Kingfish cuts simmered in thick masala", p: "₹349", tag: "Curry", c: "seafood", v: false },
+    { n: "Surmai Curry", sub: "Kingfish in authentic Maharashtrian curry", p: "₹349", tag: "Curry", c: "seafood", v: false },
+    { n: "Prawns Curry", sub: "Juicy prawns in fragrant coastal curry", p: "₹349", tag: "Curry", c: "seafood", v: false },
+    { n: "Prawns Masala", sub: "Prawns tossed in dry spiced masala", p: "₹349", tag: "Curry", c: "seafood", v: false },
     { n: "Prawns Kolhapuri", sub: "Fiery spicy red gravy prawns", p: "₹349", tag: "Curry", c: "seafood", v: false },
 
-    // --- VEG MAIN COURSE (Page 34734 & 34735) ---
+    // --- VEG MAIN COURSE (PDF Page 4 & 5) ---
     { n: "Thecha", sub: "Fiery green chilli and garlic dip", p: "₹149", tag: "Side", c: "veg_mains", v: true },
     { n: "Soyabean Masala", sub: "Nutritious soy chunks in spiced onion base", p: "₹169", tag: "Portion", c: "veg_mains", v: true },
-    { n: "Dal Tadka / Dal Fry", sub: "Yellow lentils tempered with ghee and cumin", p: "₹189", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Dal Tadka / Fry", sub: "Yellow lentils tempered with ghee and cumin", p: "₹189", tag: "Portion", c: "veg_mains", v: true },
     { n: "Aloo Muttor", sub: "Potato and green peas home gravy", p: "₹189", tag: "Portion", c: "veg_mains", v: true },
     { n: "Veg Kolhapuri", sub: "Spicy mixed vegetables in red gravy", p: "₹199", tag: "Portion", c: "veg_mains", v: true },
     { n: "Veg Kofta", sub: "Crisp vegetable dumplings in rich gravy", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
@@ -728,23 +738,38 @@
     { n: "Mix Veg", sub: "Assorted garden veggies in yellow curry", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
     { n: "Muttor Paneer", sub: "Cottage cheese and peas in tomato gravy", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
     { n: "Chana Masala", sub: "Spiced chickpeas in tangy sauce", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Green Peas Masala", sub: "Fresh green peas cooked in savory gravy", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
     { n: "Baingan Masala / Bharta", sub: "Roasted aubergine preparation", p: "₹239", tag: "Portion", c: "veg_mains", v: true },
     { n: "Veg Maratha", sub: "Spicy Maharashtrian special vegetable gravy", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
     { n: "Veg Toofani", sub: "Tangy rich assorted vegetables", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
     { n: "Dal Makhani", sub: "Slow-simmered black lentils with butter & cream", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
-    { n: "Paneer Masala / Malai Kofta", sub: "Rich creamy sauce with paneer dumplings", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Veg Bhuna", sub: "Slow-cooked spiced dry vegetables", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Masala", sub: "Classic cottage cheese in spiced gravy", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Malai Kofta", sub: "Rich creamy sauce with sweet-savory dumplings", p: "₹249", tag: "Portion", c: "veg_mains", v: true },
     { n: "Paneer Pasanda", sub: "Stuffed paneer sandwiches in cashew sauce", p: "₹269", tag: "Portion", c: "veg_mains", v: true },
     { n: "Shahi Paneer", sub: "Royal creamy almond and cashew base", p: "₹279", tag: "Portion", c: "veg_mains", v: true },
     { n: "Paneer Bhurjee", sub: "Crumbled spiced paneer with tomatoes", p: "₹279", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Veg Hydrabadi", sub: "Green herb spinach gravy with mixed vegetables", p: "₹289", tag: "Portion", c: "veg_mains", v: true },
     { n: "Paneer Handi", sub: "Rich earthen pot prepared paneer", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
     { n: "Paneer Angara", sub: "Smoky charcoal infused spicy paneer", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
-    { n: "Kaju Masala / Kaju Curry", sub: "Roasted whole cashews in savory gravy", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Kaju Masala", sub: "Roasted whole cashews in savory red gravy", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Kaju Curry", sub: "Rich white or yellow cashew nut curry", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Veg Lahori", sub: "Robust street spiced vegetable curry", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Panjabi", sub: "North Indian dhaba style spicy paneer", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Kofta", sub: "Crispy paneer balls in smooth gravy", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Korma", sub: "Mughlai style aromatic mild curry", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Veg Patiyala", sub: "Vegetable parcels topped with rich gravy", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Palak Paneer", sub: "Fresh spinach purée with cottage cheese cubes", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Khoya Paneer", sub: "Slow cooked paneer in condensed milk & nuts", p: "₹319", tag: "Portion", c: "veg_mains", v: true },
     { n: "Paneer Butter Masala", sub: "Silky tomato butter sauce with cottage cheese", p: "₹319", tag: "Portion", c: "veg_mains", v: true },
     { n: "Paneer Tikka Masala", sub: "Tandoor roasted paneer chunks in spicy gravy", p: "₹339", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Veg Kadai", sub: "Bell peppers & vegetables wok cooked with seeds", p: "₹359", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Lababdar", sub: "Velvety spiced tomato gravy with grated cheese", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
     { n: "Paneer Lajaniya", sub: "Chef's signature layered paneer delight", p: "₹349", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Paneer Kadai", sub: "Wok cooked paneer with whole crushed spices", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
     { n: "Shev Bhaji / Kala Masala", sub: "Spicy crisp sev in regional rassa", p: "₹169 / ₹179", tag: "Portion", c: "veg_mains", v: true },
 
-    // --- CHICKEN MAIN COURSE (Page 34736) ---
+    // --- CHICKEN MAIN COURSE (PDF Page 6) ---
     { n: "Chicken Curry", sub: "Home style savory chicken gravy", p: "₹249", tag: "Portion", c: "chicken_mains", v: false },
     { n: "Chicken Bhuna", sub: "Slow-roasted chicken with caramelized onions", p: "₹249", tag: "Portion", c: "chicken_mains", v: false },
     { n: "Chicken Kolhapuri", sub: "Fiery spicy red gravy chicken", p: "₹249", tag: "Portion", c: "chicken_mains", v: false },
@@ -755,6 +780,7 @@
     { n: "Chicken Tandoori Masala", sub: "Tandoori chicken pieces in rich curry", p: "₹299", tag: "Portion", c: "chicken_mains", v: false },
     { n: "Chicken Patiyala", sub: "Punjab style chicken enveloped with egg roll", p: "₹299", tag: "Portion", c: "chicken_mains", v: false },
     { n: "Chicken Kadai", sub: "Wok cooked with freshly crushed spices", p: "₹299", tag: "Portion", c: "chicken_mains", v: false },
+    { n: "Chicken Afghani", sub: "Mild creamy white cashew marinated chicken", p: "₹299", tag: "Portion", c: "chicken_mains", v: false },
     { n: "Tawa Chicken", sub: "Sizzling iron pan cooked chicken", p: "₹319", tag: "Portion", c: "chicken_mains", v: false },
     { n: "Chicken Tangadi Masala", sub: "Marinated drumsticks cooked in savory curry", p: "₹349", tag: "Portion", c: "chicken_mains", v: false },
     { n: "Chicken Tikka Masala", sub: "Grilled boneless chicken in spiced sauce", p: "₹349", tag: "Portion", c: "chicken_mains", v: false },
@@ -765,7 +791,13 @@
     { n: "Chicken Maratha (Full / Half)", sub: "Authentic spicy Maharashtra recipe", p: "₹839 / ₹459", tag: "Full / Half", c: "chicken_mains", v: false },
     { n: "Chicken Rahara (Full / Half)", sub: "Boneless chicken combined with spicy kheema", p: "₹839 / ₹459", tag: "Full / Half", c: "chicken_mains", v: false },
 
-    // --- BEERS & BEER TOWERS (Page 34741) ---
+    // --- SALAD, RAITA & DESSERT (PDF Page 4) ---
+    { n: "Green Salad", sub: "Freshly sliced cucumber, onion, tomato & carrots", p: "₹129", tag: "Plate", c: "salad_dessert", v: true },
+    { n: "Boondi Raita", sub: "Crispy gram pearls in seasoned yogurt", p: "₹129", tag: "Bowl", c: "salad_dessert", v: true },
+    { n: "Gulab Jamun", sub: "Warm sweet milk dumplings in sugar syrup", p: "₹49", tag: "Portion", c: "salad_dessert", v: true },
+    { n: "Ice Cream (Vanilla / Chocolate)", sub: "Chilled scoop of classic ice cream", p: "₹59", tag: "Scoop", c: "salad_dessert", v: true },
+
+    // --- BEERS & BEER TOWERS (PDF Page 10) ---
     { n: "Kingfisher Strong", sub: "650ml / 500ml Can", p: "₹295 / ₹225", tag: "Beer", c: "beer_shots", v: true },
     { n: "Kingfisher Ultra Max", sub: "650ml / 500ml Can", p: "₹375 / ₹300", tag: "Beer", c: "beer_shots", v: true },
     { n: "London Pilsner Strong", sub: "650ml / 500ml Can", p: "₹250 / ₹200", tag: "Beer", c: "beer_shots", v: true },
@@ -777,45 +809,76 @@
     { n: "Budweiser Mild", sub: "650ml / 500ml Can", p: "₹370 / ₹285", tag: "Beer", c: "beer_shots", v: true },
     { n: "London Pilsner Mild", sub: "650ml / 500ml Can", p: "₹250 / ₹165", tag: "Beer", c: "beer_shots", v: true },
     { n: "Carlsberg Smooth", sub: "650ml / 500ml Can", p: "₹430 / ₹285", tag: "Beer", c: "beer_shots", v: true },
-    { n: "KF Strong Beer Tower (2.5 Ltr)", sub: "Group dispenser tower", p: "₹1180", tag: "2.5L Tower", c: "beer_shots", v: true },
-    { n: "Tuborg Strong Tower (2.5 Ltr)", sub: "Group dispenser tower", p: "₹1200", tag: "2.5L Tower", c: "beer_shots", v: true },
-    { n: "Budweiser Mild Tower (2.5 Ltr)", sub: "Group dispenser tower", p: "₹1480", tag: "2.5L Tower", c: "beer_shots", v: true },
-    { n: "Budweiser Magnum Tower (2.5 Ltr)", sub: "Group dispenser tower", p: "₹1560", tag: "2.5L Tower", c: "beer_shots", v: true },
-    { n: "Tequila Shot / Fire Shot", sub: "Single 30ml shot", p: "₹199 / ₹299", tag: "Shot", c: "beer_shots", v: true },
-    { n: "Jagermeister (30ml)", sub: "German herbal liqueur", p: "₹249", tag: "Shot", c: "beer_shots", v: true },
+    { n: "KF Strong Beer Tower (2.5 Ltr)", sub: "Kingfisher dispenser tower", p: "₹1180", tag: "2.5L Tower", c: "beer_shots", v: true },
+    { n: "Tuborg Strong Tower (2.5 Ltr)", sub: "Tuborg dispenser tower", p: "₹1200", tag: "2.5L Tower", c: "beer_shots", v: true },
+    { n: "Budweiser Mild Tower (2.5 Ltr)", sub: "Budweiser mild dispenser tower", p: "₹1480", tag: "2.5L Tower", c: "beer_shots", v: true },
+    { n: "Carlsberg Strong Tower (2.5 Ltr)", sub: "Carlsberg dispenser tower", p: "₹1500", tag: "2.5L Tower", c: "beer_shots", v: true },
+    { n: "Budweiser Magnum Tower (2.5 Ltr)", sub: "Budweiser magnum dispenser tower", p: "₹1560", tag: "2.5L Tower", c: "beer_shots", v: true },
+    { n: "Tequila Shot", sub: "Single 30ml shot", p: "₹199", tag: "Shot", c: "beer_shots", v: true },
+    { n: "Tequila Fire Shot", sub: "Flamed 30ml tequila shot", p: "₹299", tag: "Shot", c: "beer_shots", v: true },
+    { n: "Jagermeister (30ml)", sub: "German herbal digestif liqueur", p: "₹249", tag: "Shot", c: "beer_shots", v: true },
 
-    // --- WHISKY & SCOTCH (Page 34738 & 34739) ---
-    { n: "Royal Challenge / Royal Green", sub: "30ml / Nip (180ml)", p: "₹65 / ₹390", tag: "Whisky", c: "whisky_scotch", v: true },
-    { n: "Royal Stag Barrel Select", sub: "30ml / Nip (180ml)", p: "₹80 / ₹480", tag: "Whisky", c: "whisky_scotch", v: true },
-    { n: "Oaksmith Silver / Oaken Glow", sub: "30ml / Nip (180ml)", p: "₹85 / ₹510", tag: "Whisky", c: "whisky_scotch", v: true },
-    { n: "Legacy Whisky", sub: "30ml / Nip (180ml)", p: "₹90 / ₹540", tag: "Whisky", c: "whisky_scotch", v: true },
-    { n: "Rockford Classic / Blenders Pride", sub: "30ml / Nip (180ml)", p: "₹95 / ₹570", tag: "Whisky", c: "whisky_scotch", v: true },
-    { n: "Signature / Oaksmith Gold", sub: "30ml / Nip (180ml)", p: "₹95 / ₹100", tag: "Whisky", c: "whisky_scotch", v: true },
-    { n: "Antiquity Blue / Rockford Reserve", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "Whisky", c: "whisky_scotch", v: true },
-    { n: "Jim Beam Bourbon", sub: "30ml / Nip (180ml)", p: "₹200 / ₹1200", tag: "Whisky", c: "whisky_scotch", v: true },
-    { n: "The Glenwalk Scotch", sub: "30ml / Nip (180ml)", p: "₹140 / ₹840", tag: "Scotch", c: "whisky_scotch", v: true },
-    { n: "Ballantines / Vat-69", sub: "30ml / Nip (180ml)", p: "₹170 / ₹1020", tag: "Scotch", c: "whisky_scotch", v: true },
+    // --- WHISKY & SCOTCH (PDF Page 8 & 9) ---
+    { n: "DSP Black", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Delux Whisky", c: "whisky_scotch", v: true },
+    { n: "Imperial Blue", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Delux Whisky", c: "whisky_scotch", v: true },
+    { n: "OC Plain", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Delux Whisky", c: "whisky_scotch", v: true },
+    { n: "McD No. 1 Whisky", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Delux Whisky", c: "whisky_scotch", v: true },
+    { n: "OC Blue", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Delux Whisky", c: "whisky_scotch", v: true },
+    { n: "Iconiq White", sub: "30ml / Nip (180ml)", p: "₹60 / ₹360", tag: "Delux Whisky", c: "whisky_scotch", v: true },
+    { n: "Sterling B7", sub: "30ml / Nip (180ml)", p: "₹60 / ₹360", tag: "Delux Whisky", c: "whisky_scotch", v: true },
+    { n: "Royal Stag", sub: "30ml / Nip (180ml)", p: "₹65 / ₹390", tag: "Delux Whisky", c: "whisky_scotch", v: true },
+    { n: "Royal Challenge", sub: "30ml / Nip (180ml)", p: "₹65 / ₹390", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Royal Green", sub: "30ml / Nip (180ml)", p: "₹65 / ₹390", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Royal Stag Barrel Select", sub: "30ml / Nip (180ml)", p: "₹80 / ₹480", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Oaksmith Silver", sub: "30ml / Nip (180ml)", p: "₹85 / ₹510", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Oaken Glow", sub: "30ml / Nip (180ml)", p: "₹85 / ₹510", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Legacy Whisky", sub: "30ml / Nip (180ml)", p: "₹90 / ₹540", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Rockford Classic", sub: "30ml / Nip (180ml)", p: "₹95 / ₹570", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Blenders Pride", sub: "30ml / Nip (180ml)", p: "₹95 / ₹570", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Signature", sub: "30ml / Nip (180ml)", p: "₹95 / ₹570", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Oaksmith Gold", sub: "30ml / Nip (180ml)", p: "₹100 / ₹600", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Rockford Reserve", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Blenders Pride Reserve", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "Antiquity Blue", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "Premium Whisky", c: "whisky_scotch", v: true },
+    { n: "MacIntosh", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "Delux Whisky", c: "whisky_scotch", v: true },
+    { n: "Jim Beam Bourbon", sub: "30ml / Nip (180ml)", p: "₹200 / ₹1200", tag: "Bourbon", c: "whisky_scotch", v: true },
+    { n: "The Glenwalk", sub: "30ml / Nip (180ml)", p: "₹140 / ₹840", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Dewars", sub: "30ml / Nip (180ml)", p: "₹165 / ₹990", tag: "Scotch", c: "whisky_scotch", v: true },
     { n: "Johnnie Walker Red Label", sub: "30ml / Nip (180ml)", p: "₹165 / ₹990", tag: "Scotch", c: "whisky_scotch", v: true },
-    { n: "100 Pipers Regular / Black Dog", sub: "30ml / Nip (180ml)", p: "₹175 / ₹1050", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Ballantines", sub: "30ml / Nip (180ml)", p: "₹170 / ₹1020", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Vat-69", sub: "30ml / Nip (180ml)", p: "₹170 / ₹1020", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Black Dog Centenary", sub: "30ml / Nip (180ml)", p: "₹175 / ₹1050", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "100 Pipers Regular", sub: "30ml / Nip (180ml)", p: "₹175 / ₹1050", tag: "Scotch", c: "whisky_scotch", v: true },
     { n: "Black & White Scotch", sub: "30ml / Nip (180ml)", p: "₹185 / ₹1110", tag: "Scotch", c: "whisky_scotch", v: true },
     { n: "Royal Ranthambore", sub: "30ml / Nip (180ml)", p: "₹190 / ₹1040", tag: "Scotch", c: "whisky_scotch", v: true },
-    { n: "Jameson Irish Whiskey", sub: "30ml / Nip (180ml)", p: "₹210 / ₹1260", tag: "Scotch", c: "whisky_scotch", v: true },
-    { n: "Chivas Regal 12 Yrs", sub: "30ml / Nip (180ml)", p: "₹300 / ₹1800", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "100 Pipers 8 Years", sub: "30ml / Nip (180ml)", p: "₹205 / ₹1230", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Jameson Irish Whiskey", sub: "30ml / Nip (180ml)", p: "₹210 / ₹1260", tag: "Whiskey", c: "whisky_scotch", v: true },
+    { n: "Teachers-50", sub: "30ml / Nip (180ml)", p: "₹215 / ₹1290", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Black Dog Triple Gold", sub: "30ml / Nip (180ml)", p: "₹215 / ₹1290", tag: "Scotch", c: "whisky_scotch", v: true },
     { n: "Gentleman Jack", sub: "30ml / Nip (180ml)", p: "₹230 / ₹1380", tag: "Scotch", c: "whisky_scotch", v: true },
     { n: "Johnnie Walker Black Label", sub: "30ml / Nip (180ml)", p: "₹240 / ₹1440", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "100 Pipers 12 Years", sub: "30ml / Nip (180ml)", p: "₹240 / ₹1440", tag: "Scotch", c: "whisky_scotch", v: true },
+    { n: "Chivas Regal 12 Yrs", sub: "30ml / Nip (180ml)", p: "₹300 / ₹1800", tag: "Scotch", c: "whisky_scotch", v: true },
 
-    // --- VODKA, RUM & GIN (Page 34737 & 34738) ---
+    // --- VODKA, RUM & GIN (PDF Page 7 & 8) ---
     { n: "Romanova Vodka", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Vodka", c: "vodka_rum_gin", v: true },
     { n: "Magic Moments Regular", sub: "30ml / Nip (180ml)", p: "₹70 / ₹420", tag: "Vodka", c: "vodka_rum_gin", v: true },
-    { n: "Smirnoff Regular / Flavour", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "Vodka", c: "vodka_rum_gin", v: true },
-    { n: "Absolut Vodka / Raspberry", sub: "30ml / Nip (180ml)", p: "₹190 / ₹1140", tag: "Vodka", c: "vodka_rum_gin", v: true },
-    { n: "Blue Riband Gin / Greater Than", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Gin", c: "vodka_rum_gin", v: true },
-    { n: "Bombay Sapphire / Jaisalmer Gin", sub: "30ml / Nip (180ml)", p: "₹240 / ₹1440", tag: "Craft Gin", c: "vodka_rum_gin", v: true },
-    { n: "Old Monk Rum / McD No. 1", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Dark Rum", c: "vodka_rum_gin", v: true },
-    { n: "Bacardi Black", sub: "30ml / Nip (180ml)", p: "₹65 / ₹390", tag: "Rum", c: "vodka_rum_gin", v: true },
-    { n: "Bacardi White / Flavour", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "White Rum", c: "vodka_rum_gin", v: true },
+    { n: "Grand Master Flavour", sub: "30ml / Nip (180ml)", p: "₹75 / ₹450", tag: "Vodka", c: "vodka_rum_gin", v: true },
+    { n: "Smirnoff Regular", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "Vodka", c: "vodka_rum_gin", v: true },
+    { n: "Smirnoff Flavour", sub: "30ml / Nip (180ml)", p: "₹110 / ₹660", tag: "Vodka", c: "vodka_rum_gin", v: true },
+    { n: "Absolut Regular", sub: "30ml / Nip (180ml)", p: "₹190 / ₹1140", tag: "Vodka", c: "vodka_rum_gin", v: true },
+    { n: "Absolut Raspberry", sub: "30ml / Nip (180ml)", p: "₹200 / ₹1200", tag: "Vodka", c: "vodka_rum_gin", v: true },
+    { n: "Blue Riband Gin", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Gin", c: "vodka_rum_gin", v: true },
+    { n: "Greater Than Gin", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Gin", c: "vodka_rum_gin", v: true },
+    { n: "Bombay Sapphire", sub: "30ml / Nip (180ml)", p: "₹240 / ₹1440", tag: "Craft Gin", c: "vodka_rum_gin", v: true },
+    { n: "Jaisalmer Craft Gin", sub: "30ml / Nip (180ml)", p: "₹240 / ₹1440", tag: "Craft Gin", c: "vodka_rum_gin", v: true },
+    { n: "Old Monk Dark Rum", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Dark Rum", c: "vodka_rum_gin", v: true },
+    { n: "McD No. 1 Rum", sub: "30ml / Nip (180ml)", p: "₹55 / ₹330", tag: "Rum", c: "vodka_rum_gin", v: true },
+    { n: "Bacardi Black", sub: "30ml / Nip (180ml)", p: "₹65 / ₹390", tag: "Dark Rum", c: "vodka_rum_gin", v: true },
+    { n: "Bacardi White", sub: "30ml / Nip (180ml)", p: "₹105 / ₹630", tag: "White Rum", c: "vodka_rum_gin", v: true },
+    { n: "Bacardi Flavour", sub: "30ml / Nip (180ml)", p: "₹110 / ₹660", tag: "Flavoured Rum", c: "vodka_rum_gin", v: true },
 
-    // --- WINE & BREEZERS (Page 34739) ---
+    // --- WINE & BREEZERS (PDF Page 9) ---
     { n: "Sula (Samara) Red / White", sub: "750ml / 375ml", p: "₹665 / ₹360", tag: "Wine", c: "wine_breezer", v: true },
     { n: "Dia White / Red Wine", sub: "750ml Bottle", p: "₹495", tag: "Wine", c: "wine_breezer", v: true },
     { n: "Madera Red / White", sub: "750ml / 375ml", p: "₹800 / ₹430", tag: "Wine", c: "wine_breezer", v: true },
@@ -824,7 +887,8 @@
     { n: "Sula Chenin Blanc", sub: "750ml Bottle", p: "₹795", tag: "Wine", c: "wine_breezer", v: true },
     { n: "Sula Brut Sparkling", sub: "750ml / 375ml", p: "₹1990 / ₹565", tag: "Sparkling", c: "wine_breezer", v: true },
     { n: "Bacardi Breezer (Cranberry)", sub: "275ml Bottle", p: "₹235", tag: "Breezer", c: "wine_breezer", v: true },
-    { n: "Bacardi Breezer (Jamaican / Blue Berry)", sub: "275ml Bottle", p: "₹235", tag: "Breezer", c: "wine_breezer", v: true }
+    { n: "Bacardi Breezer (Jamaican)", sub: "275ml Bottle", p: "₹235", tag: "Breezer", c: "wine_breezer", v: true },
+    { n: "Bacardi Breezer (Blue Berry)", sub: "275ml Bottle", p: "₹235", tag: "Breezer", c: "wine_breezer", v: true }
   ];
 
   let currentCategory = 'all';
