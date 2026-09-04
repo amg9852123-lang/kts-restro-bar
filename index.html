@@ -622,9 +622,9 @@
   <a href="https://maps.app.goo.gl/wxW9HSnt32FcZ19q7?g_st=ac" target="_blank" class="f-maps"><i class="fa-solid fa-location-arrow"></i> Maps</a>
   <a href="https://wa.me/919049590042?text=Hi%20KTS,%20I%20want%20to%20reserve%20a%20table" class="f-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
 </div>
-
 <script>
   const KTS_MENU = [
+
     // --- CHINESE VEG (PDF Page 2) ---
     { n: "Chinese Bhel", sub: "Crispy noodles with tangy oriental relish", p: "₹199", tag: "Portion", c: "chinese_veg", v: true },
     { n: "Soyabean Chilli", sub: "Tossed soy chunks with bell peppers", p: "₹219", tag: "Portion", c: "chinese_veg", v: true },
@@ -660,7 +660,6 @@
     { n: "Chicken Majestic", sub: "Tender boneless strips with curry aroma", p: "₹349", tag: "Portion", c: "chinese_nonveg", v: false },
     { n: "Chicken Sathe", sub: "Skewered chicken with chef seasoning", p: "₹349", tag: "Portion", c: "chinese_nonveg", v: false },
     { n: "Chicken Bullet (With Rum)", sub: "Infused with dark rum and flamed spices", p: "₹349", tag: "Signature", c: "chinese_nonveg", v: false },
-    { n: "Chicken Lollipop (Special)", sub: "Chef signature deep tossed lollipop", p: "₹419", tag: "Portion", c: "chinese_nonveg", v: false },
     { n: "Chicken Chilli Dry / Gravy", sub: "Classic soy chilli chicken", p: "₹249 / ₹299", tag: "Dry / Gravy", c: "chinese_nonveg", v: false },
     { n: "Chicken Manchuriyan Dry / Gravy", sub: "Minced chicken globes in garlic sauce", p: "₹289 / ₹299", tag: "Dry / Gravy", c: "chinese_nonveg", v: false },
     { n: "Chicken Garlic Dry / Gravy", sub: "Robust garlic pepper chicken", p: "₹289 / ₹299", tag: "Dry / Gravy", c: "chinese_nonveg", v: false },
@@ -760,7 +759,7 @@
     { n: "Paneer Korma", sub: "Mughlai style aromatic mild curry", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
     { n: "Veg Patiyala", sub: "Vegetable parcels topped with rich gravy", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
     { n: "Palak Paneer", sub: "Fresh spinach purée with cottage cheese cubes", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
-    { n: "Khoya Paneer", sub: "Slow cooked paneer in condensed milk & nuts", p: "₹319", tag: "Portion", c: "veg_mains", v: true },
+    { n: "Khoya Paneer", sub: "Slow cooked paneer in rich nuts and dairy", p: "₹299", tag: "Portion", c: "veg_mains", v: true },
     { n: "Paneer Butter Masala", sub: "Silky tomato butter sauce with cottage cheese", p: "₹319", tag: "Portion", c: "veg_mains", v: true },
     { n: "Paneer Tikka Masala", sub: "Tandoor roasted paneer chunks in spicy gravy", p: "₹339", tag: "Portion", c: "veg_mains", v: true },
     { n: "Veg Kadai", sub: "Bell peppers & vegetables wok cooked with seeds", p: "₹359", tag: "Portion", c: "veg_mains", v: true },
@@ -888,10 +887,10 @@
     { n: "Sula Brut Sparkling", sub: "750ml / 375ml", p: "₹1990 / ₹565", tag: "Sparkling", c: "wine_breezer", v: true },
     { n: "Bacardi Breezer (Cranberry)", sub: "275ml Bottle", p: "₹235", tag: "Breezer", c: "wine_breezer", v: true },
     { n: "Bacardi Breezer (Jamaican)", sub: "275ml Bottle", p: "₹235", tag: "Breezer", c: "wine_breezer", v: true },
-    { n: "Bacardi Breezer (Blue Berry)", sub: "275ml Bottle", p: "₹235", tag: "Breezer", c: "wine_breezer", v: true }
-  ];
-
-  let currentCategory = 'all';
+     { n: "Bacardi Breezer (Blue Berry)", sub: "275ml Bottle", p: "₹235", tag: "Breezer", c: "wine_breezer", v: true }
+];
+ 
+ let currentCategory = 'all';
 
   function renderList(items) {
     const list = document.getElementById('fullMenuList');
